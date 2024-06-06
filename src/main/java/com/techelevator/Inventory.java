@@ -16,5 +16,9 @@ public class Inventory {
         return items;
     }
 
+    public void dispenseItem(String itemCode, int quantityToRemove) {
+        inventoryMap.get(itemCode).setQuantity(inventoryMap.get(itemCode).getQuantity() - quantityToRemove);
+    }
+
 
 }

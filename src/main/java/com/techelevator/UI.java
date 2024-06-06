@@ -75,6 +75,7 @@ public class UI {
 
 
 
+
     public int askUserInt(String message) {
         System.out.println(message);
         return myScanner.nextInt();

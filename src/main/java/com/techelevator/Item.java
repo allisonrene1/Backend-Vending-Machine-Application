@@ -5,8 +5,18 @@ public class Item {
     private double price;
     private int quantity;
 
+
+
+
+    public String eatingNoise;
+
+
     public int getQuantity() {
         return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public String getName() {
@@ -23,6 +33,10 @@ public class Item {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public String getEatingNoise() {
+        return eatingNoise;
     }
 
     public Item(String name, double price) {

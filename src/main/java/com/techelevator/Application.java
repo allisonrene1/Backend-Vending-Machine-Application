@@ -12,6 +12,8 @@ public class Application {
         UI ui = new UI();
 		Inventory inventory = new Inventory();
 		FileReader fileReader = new FileReader();
+		CashBox cashBox = new CashBox();
+
 
 
 		

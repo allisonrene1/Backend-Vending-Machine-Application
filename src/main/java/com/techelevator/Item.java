@@ -1,10 +1,13 @@
 package com.techelevator;
 
-public abstract class InventoryItem {
+public class Item {
     private String name;
     private double price;
-    private String slotLocation;
-    private int totalSales;
+    private int quantity;
+
+    public int getQuantity() {
+        return quantity;
+    }
 
     public String getName() {
         return name;
@@ -22,8 +25,9 @@ public abstract class InventoryItem {
         this.price = price;
     }
 
-    public InventoryItem(String name, double price) {
+    public Item(String name, double price) {
         this.name = name;
         this.price = price;
+        this.quantity = 10;
     }
 }

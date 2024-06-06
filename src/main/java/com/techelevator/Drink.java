@@ -1,6 +1,6 @@
 package com.techelevator;
 
-public class Drink extends InventoryItem{
+public class Drink extends Item{
     public Drink(String name, double price) {
         super(name, price);
     }

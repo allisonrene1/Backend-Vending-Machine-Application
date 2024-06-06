@@ -1,4 +1,4 @@
 package com.techelevator;
 
-public class VendingUI {
+public class UI {
 }

@@ -6,10 +6,26 @@ public class UI {
 
         private Scanner myScanner = new Scanner(System.in);
 
-    public String askUserString(String message) {
-        System.out.println(message);
+
+
+    public int showMainMenu() {
+
+        //print main menu and return the user's choice:
+
+        System.out.println("(1) Display Vending Machine Items");
+        System.out.println("(2) Purchase");
+        System.out.println("(3) Exit");
+
+        return Integer.parseInt(myScanner.nextLine());
+
+    }
+
+    public String askUserOptions() {
+        System.out.println();
         return myScanner.nextLine();
     }
+
+
 
 
     public int askUserInt(String message) {

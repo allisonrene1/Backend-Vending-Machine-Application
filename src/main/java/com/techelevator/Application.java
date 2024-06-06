@@ -9,7 +9,15 @@ public class Application {
 
 	public void run() {
 
-		//do amazing stuff here!
+        UI ui = new UI();
+		Inventory inventory = new Inventory();
+		FileReader fileReader = new FileReader();
+
+
+		
+
+
+
 
 	}
 }

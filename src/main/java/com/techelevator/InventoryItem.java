@@ -3,6 +3,8 @@ package com.techelevator;
 public abstract class InventoryItem {
     private String name;
     private double price;
+    private String slotLocation;
+    private int totalSales;
 
     public String getName() {
         return name;

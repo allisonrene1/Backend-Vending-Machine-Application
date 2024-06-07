@@ -17,7 +17,7 @@ public class Application {
 		Inventory inventory = new Inventory();
 		FileReader fileReader = new FileReader();
 		CashBox cashBox = new CashBox();
-		
+
 
 		while(userInput != 3) {
 			userInput = ui.showMainMenu();

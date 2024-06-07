@@ -15,7 +15,9 @@ public class UI {
         System.out.println("(2) Purchase");
         System.out.println("(3) Exit");
 
-        return myScanner.nextInt();
+        int choice = myScanner.nextInt();
+        myScanner.nextLine();
+        return choice;
     }
 
     public int showPurchaseMenu(Double balance) {
@@ -28,7 +30,9 @@ public class UI {
         System.out.print("Current Money Provided: $");
         System.out.println(balance);
 
-        return myScanner.nextInt();
+        int choice = myScanner.nextInt();
+        myScanner.nextLine();
+        return choice;
     }
 
     public void feedMoney(CashBox cashBox) {
@@ -37,6 +41,7 @@ public class UI {
         while (moneyToAdd <= 0 || moneyToAdd > 10) {
             System.out.println("Add money to the machine in whole dollar amounts between 1-10");
             moneyToAdd = myScanner.nextInt();
+            myScanner.nextLine();
             if (moneyToAdd <= 0 || moneyToAdd > 10) {
                 System.out.println("Invalid Input");
             } else {
@@ -52,14 +57,20 @@ public class UI {
     public int askUserQuantity() {
         //Asks user for item quantity
         System.out.println("Enter the quantity that you would like to purchase");
-        return myScanner.nextInt();
+        int quantity = myScanner.nextInt();
+        myScanner.nextLine();
+        return quantity;
+
     }
 
-    public String askUserProductAndQuantity() {
-        //Asks user for item code
-        System.out.println("Enter a item code and quantity that you would like to purchase");
-        return myScanner.nextLine();
-    }
+//    public String[] askUserProductAndQuantity() {
+////        //Asks user for item code
+////        System.out.println("Enter a item code and quantity that you would like to purchase (A1,5)");
+////        String codeAndQuantity = myScanner.nextLine();
+////        String[] codeAndQuantityArray = codeAndQuantity.split(",");
+////
+////        return codeAndQuantityArray;
+//    }
 
     public boolean isValidItem(String itemCode) {
         Inventory inventory = new Inventory();
@@ -81,6 +92,7 @@ public class UI {
         //Asks user for an integer based on a provided question
         System.out.println(message);
         return myScanner.nextInt();
+
     }
 
     public void outPutString(String message) {

@@ -31,15 +31,19 @@ public class Application {
 						ui.feedMoney(cashBox);
 					} else if(purchaseInput == 2) {
 							ui.outPutString(inventory.displayItemsForCustomer());
-							String checkCode = ui.askUserProduct();
+							String itemCode = ui.askUserProduct();
+//
+							int quantity = ui.askUserQuantity();
 
-							int checkQuantity = ui.askUserQuantity();
+//							String[] codeAndQuantityArray = ui.askUserProductAndQuantity();
+//							String itemCode = codeAndQuantityArray[0];
+//							int quantity = Integer.parseInt(codeAndQuantityArray[1]);
 
-							if (ui.isValidItem(checkCode) && ui.isValidQuantity(checkCode,checkQuantity)) {
-								ui.outPutString(inventory.dispenseItem(checkCode,checkQuantity));
-							} else if (!ui.isValidItem(checkCode)) {
+							if (ui.isValidItem(itemCode) && ui.isValidQuantity(itemCode,quantity)) {
+								ui.outPutString(inventory.dispenseItem(itemCode,quantity));
+							} else if (!ui.isValidItem(itemCode)) {
 								ui.outPutString("Product code doesn't exist");
-							} else if (ui.isValidItem(checkCode) && !ui.isValidQuantity(checkCode,checkQuantity)){
+							} else if (ui.isValidItem(itemCode) && !ui.isValidQuantity(itemCode,quantity)){
 								ui.outPutString("Product is currently sold out, or there is not enough quantity left in the machine");
 							}
 					} else if(purchaseInput == 3) {

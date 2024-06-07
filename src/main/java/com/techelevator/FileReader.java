@@ -10,6 +10,7 @@ public class FileReader extends Inventory{
     String filePath = "vendingmachine.csv";
     File vendingRestock = new File(filePath);
     Scanner fileInput;{
+        //Adds data from input file into inventory by sorting item type and constructing item objects
         try {
             fileInput = new Scanner(vendingRestock);
         } catch (FileNotFoundException e) {
@@ -33,7 +34,6 @@ public class FileReader extends Inventory{
                 //TODO: DON'T FORGET TO FIX THIS LATER!!!!!!
                 inventoryMap.put(restockArray[0], new Item(restockArray[1], Double.parseDouble(restockArray[2])));
             }
-
         }
     }
 }

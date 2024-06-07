@@ -1,6 +1,5 @@
 package com.techelevator;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class UI {

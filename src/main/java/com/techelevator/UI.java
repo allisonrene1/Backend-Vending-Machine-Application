@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class UI {
 
-        private Scanner myScanner = new Scanner(System.in);
+    private Scanner myScanner = new Scanner(System.in);
     CashBox cashBox = new CashBox();
     Inventory inventory = new Inventory();
 

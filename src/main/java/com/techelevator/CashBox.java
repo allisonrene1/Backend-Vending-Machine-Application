@@ -1,7 +1,7 @@
 package com.techelevator;
 
 public class CashBox {
-    private Double balance;
+    private Double balance = 0.0;
 
     public String returnChange() {
         //converts balance into change and returns balance to zero
@@ -18,7 +18,7 @@ public class CashBox {
         return balance;
     }
 
-    public void setBalance(double balance) {
+    public void setBalance(Double balance) {
         this.balance = balance;
     }
 }

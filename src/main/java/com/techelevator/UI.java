@@ -31,8 +31,7 @@ public class UI {
         return myScanner.nextInt();
     }
 
-    public void feedMoney() {
-        CashBox cashBox = new CashBox();
+    public void feedMoney(CashBox cashBox) {
         //Asks for integer between 1 and 10 to add to balance
         int moneyToAdd = 0;
         while (moneyToAdd <= 0 || moneyToAdd > 10) {
@@ -54,6 +53,12 @@ public class UI {
         //Asks user for item quantity
         System.out.println("Enter the quantity that you would like to purchase");
         return myScanner.nextInt();
+    }
+
+    public String askUserProductAndQuantity() {
+        //Asks user for item code
+        System.out.println("Enter a item code and quantity that you would like to purchase");
+        return myScanner.nextLine();
     }
 
     public boolean isValidItem(String itemCode) {

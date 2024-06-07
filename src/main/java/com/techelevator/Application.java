@@ -28,13 +28,13 @@ public class Application {
 				while(purchaseInput != 3) {
 					purchaseInput = ui.showPurchaseMenu(cashBox.getBalance());
 					if(purchaseInput == 1) {
-						ui.feedMoney();
+						ui.feedMoney(cashBox);
 					} else if(purchaseInput == 2) {
-							String checkCode;
-							int checkQuantity;
 							ui.outPutString(inventory.displayItemsForCustomer());
-							checkCode = ui.askUserProduct();
-							checkQuantity = ui.askUserQuantity();
+							String checkCode = ui.askUserProduct();
+
+							int checkQuantity = ui.askUserQuantity();
+
 							if (ui.isValidItem(checkCode) && ui.isValidQuantity(checkCode,checkQuantity)) {
 								ui.outPutString(inventory.dispenseItem(checkCode,checkQuantity));
 							} else if (!ui.isValidItem(checkCode)) {
@@ -44,13 +44,11 @@ public class Application {
 							}
 					} else if(purchaseInput == 3) {
 						ui.outPutString(cashBox.returnChange());
+						purchaseInput = 0;
 						break;
 					}
 				}
-
 			}
 		}
-
-
 	}
 }

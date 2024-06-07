@@ -6,7 +6,6 @@ public class Item {
     private int quantity;
     public String eatingNoise;
 
-
     public int getQuantity() {
         return quantity;
     }

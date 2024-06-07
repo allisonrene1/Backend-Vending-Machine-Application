@@ -63,15 +63,6 @@ public class UI {
 
     }
 
-//    public String[] askUserProductAndQuantity() {
-////        //Asks user for item code
-////        System.out.println("Enter a item code and quantity that you would like to purchase (A1,5)");
-////        String codeAndQuantity = myScanner.nextLine();
-////        String[] codeAndQuantityArray = codeAndQuantity.split(",");
-////
-////        return codeAndQuantityArray;
-//    }
-
     public boolean isValidItem(String itemCode) {
         Inventory inventory = new Inventory();
         //checks inventory to see if it contains requested item
@@ -86,13 +77,6 @@ public class UI {
         } else {
             return false;
         }
-    }
-
-    public int askUserInt(String message) {
-        //Asks user for an integer based on a provided question
-        System.out.println(message);
-        return myScanner.nextInt();
-
     }
 
     public void outPutString(String message) {

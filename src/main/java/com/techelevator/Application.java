@@ -32,15 +32,9 @@ public class Application {
 					} else if(purchaseInput == 2) {
 							ui.outPutString(inventory.displayItemsForCustomer());
 							String itemCode = ui.askUserProduct();
-//
 							int quantity = ui.askUserQuantity();
-
-//							String[] codeAndQuantityArray = ui.askUserProductAndQuantity();
-//							String itemCode = codeAndQuantityArray[0];
-//							int quantity = Integer.parseInt(codeAndQuantityArray[1]);
-
 							if (ui.isValidItem(itemCode) && ui.isValidQuantity(itemCode,quantity)) {
-								ui.outPutString(inventory.dispenseItem(itemCode,quantity));
+								ui.outPutString(inventory.dispenseItem(itemCode,quantity,cashBox));
 							} else if (!ui.isValidItem(itemCode)) {
 								ui.outPutString("Product code doesn't exist");
 							} else if (ui.isValidItem(itemCode) && !ui.isValidQuantity(itemCode,quantity)){

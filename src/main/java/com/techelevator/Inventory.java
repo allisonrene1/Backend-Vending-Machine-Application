@@ -25,11 +25,11 @@ public class Inventory {
         return items;
     }
 
-    public String dispenseItem(String itemCode, int quantityToRemove) {
-        CashBox cashBox = new CashBox();
+    public String dispenseItem(String itemCode, int quantityToRemove, CashBox cashBox) {
         //Lowers item quantity by selected quantity and displays quantity, name, cost, and updates balance by subtracting cost of purchase
         inventoryMap.get(itemCode).setQuantity(inventoryMap.get(itemCode).getQuantity() - quantityToRemove);
-        cashBox.setBalance(cashBox.getBalance() - inventoryMap.get(itemCode).getPrice() * quantityToRemove);
-        return (quantityToRemove + " " + inventoryMap.get(itemCode).getName() + " Price: $" + inventoryMap.get(itemCode).getPrice() + " Balance: $" + cashBox.getBalance() + "\n" + inventoryMap.get(itemCode).getEatingNoise());
+        double newBalance = cashBox.getBalance() - inventoryMap.get(itemCode).getPrice() * quantityToRemove;
+        cashBox.setBalance(newBalance);
+        return (quantityToRemove + " " + inventoryMap.get(itemCode).getName() + " Price:$" + inventoryMap.get(itemCode).getPrice() + " Balance:$" + cashBox.getBalance() + "\n" + inventoryMap.get(itemCode).getEatingNoise() + "\n");
     }
 }

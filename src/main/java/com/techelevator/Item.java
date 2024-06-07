@@ -6,7 +6,6 @@ public class Item {
     private int quantity;
     public String eatingNoise;
 
-
     public int getQuantity() {
         return quantity;
     }
@@ -39,5 +38,6 @@ public class Item {
         this.name = name;
         this.price = price;
         this.quantity = 10;
+        this.eatingNoise = "";
     }
 }

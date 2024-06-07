@@ -8,7 +8,7 @@ public class Inventory {
     TreeMap <String,Item> inventoryMap = new TreeMap<>();
 
     public String displayItemsForCustomer() {
-        //Displays inventory in rows with slot numbe, name, price, and quantity remaining
+        //Displays inventory in rows with slot number, name, price, and quantity remaining
         String items = "";
         for (Map.Entry<String,Item> entry : inventoryMap.entrySet()) {
            String item = (entry.getKey() + " " + entry.getValue() + "\n");

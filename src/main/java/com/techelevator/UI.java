@@ -46,15 +46,15 @@ public class UI {
             }
         }
     }
-    public void askUserProduct() {
+    public String askUserProduct() {
         //Asks user for item code
         System.out.println("Enter a code to select an item");
-        String itemCode = myScanner.nextLine();
+        return myScanner.nextLine();
     }
-    public void askUserQuantity() {
+    public int askUserQuantity() {
         //Asks user for item quantity
         System.out.println("Enter the quantity that you would like to purchase");
-        int itemQuantity = myScanner.nextInt();
+        return myScanner.nextInt();
     }
 
     public boolean isValidItem(String itemCode) {

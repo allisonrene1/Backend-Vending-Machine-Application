@@ -17,10 +17,8 @@ public class Application {
 		Inventory inventory = new Inventory();
 		CashBox cashBox = new CashBox();
 
-
 		fileReader.restockVendingMachine();
 		cashBox.setBalance(0.0);
-
 
 		while(userInput != 3) {
 			userInput = ui.showMainMenu();

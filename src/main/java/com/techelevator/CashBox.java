@@ -5,13 +5,14 @@ public class CashBox {
 
 
     public String returnChange() {
-      int quarters =  (balance * 100) / 25;
-      balance = (balance * 100) % 25;
-      int dimes = balance /10;
-      balance = balance % 100;
-      int nickels = balance / 5;
-      balance = 0;
-      return (quarters + " quarters," + nickels + " nickels," + dimes + " dimes,");
+        //converts balance into change and returns balance to zero
+        int quarters =  (balance * 100) / 25;
+        balance = (balance * 100) % 25;
+        int dimes = balance /10;
+        balance = balance % 100;
+        int nickels = balance / 5;
+        balance = 0;
+        return (quarters + " quarters," + nickels + " nickels," + dimes + " dimes,");
     }
 
 

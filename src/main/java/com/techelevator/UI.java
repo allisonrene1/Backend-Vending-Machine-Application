@@ -6,8 +6,6 @@ import java.util.Scanner;
 public class UI {
 
     private Scanner myScanner = new Scanner(System.in);
-    CashBox cashBox = new CashBox();
-    Inventory inventory = new Inventory();
 
     public int showMainMenu() {
 
@@ -34,6 +32,7 @@ public class UI {
     }
 
     public void feedMoney() {
+        CashBox cashBox = new CashBox();
         //Asks for integer between 1 and 10 to add to balance
         int moneyToAdd = 0;
         while (moneyToAdd <= 0 || moneyToAdd > 10) {
@@ -42,7 +41,7 @@ public class UI {
             if (moneyToAdd <= 0 || moneyToAdd > 10) {
                 System.out.println("Invalid Input");
             } else {
-               cashBox.setBalance(cashBox.getBalance() + moneyToAdd);
+               cashBox.setBalance(moneyToAdd + cashBox.getBalance());
             }
         }
     }
@@ -58,13 +57,15 @@ public class UI {
     }
 
     public boolean isValidItem(String itemCode) {
+        Inventory inventory = new Inventory();
         //checks inventory to see if it contains requested item
-        return inventory.inventoryMap.containsKey(itemCode);
+        return inventory.getInventoryMap().containsKey(itemCode);
     }
 
     public boolean isValidQuantity(String itemCode, int quantity) {
+        Inventory inventory = new Inventory();
         //Checks item as defined by item code to see if requested quantity is available
-        if (inventory.inventoryMap.get(itemCode).getQuantity() >= quantity) {
+        if (inventory.getInventoryMap().get(itemCode).getQuantity() >= quantity) {
             return true;
         } else {
             return false;

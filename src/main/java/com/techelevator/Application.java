@@ -12,12 +12,13 @@ public class Application {
 		int userInput = 0;
 		int purchaseInput = 0;
 
-
         UI ui = new UI();
-		Inventory inventory = new Inventory();
 		FileReader fileReader = new FileReader();
+		Inventory inventory = new Inventory();
 		CashBox cashBox = new CashBox();
-		
+
+		fileReader.restockVendingMachine();
+		cashBox.setBalance(0.0);
 
 		while(userInput != 3) {
 			userInput = ui.showMainMenu();
@@ -31,10 +32,19 @@ public class Application {
 					} else if(purchaseInput == 2) {
 							String checkCode;
 							int checkQuantity;
+							ui.outPutString(inventory.displayItemsForCustomer());
 							checkCode = ui.askUserProduct();
 							checkQuantity = ui.askUserQuantity();
+							if (ui.isValidItem(checkCode) && ui.isValidQuantity(checkCode,checkQuantity)) {
+								ui.outPutString(inventory.dispenseItem(checkCode,checkQuantity));
+							} else if (!ui.isValidItem(checkCode)) {
+								ui.outPutString("Product code doesn't exist");
+							} else if (ui.isValidItem(checkCode) && !ui.isValidQuantity(checkCode,checkQuantity)){
+								ui.outPutString("Product is currently sold out, or there is not enough quantity left in the machine");
+							}
 					} else if(purchaseInput == 3) {
-
+						ui.outPutString(cashBox.returnChange());
+						break;
 					}
 				}
 

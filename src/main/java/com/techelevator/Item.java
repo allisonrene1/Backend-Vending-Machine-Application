@@ -39,5 +39,6 @@ public class Item {
         this.name = name;
         this.price = price;
         this.quantity = 10;
+        this.eatingNoise = "";
     }
 }

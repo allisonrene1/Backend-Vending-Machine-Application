@@ -3,7 +3,6 @@ package com.techelevator;
 public class CashBox {
     private Double balance;
 
-
     public String returnChange() {
         //converts balance into change and returns balance to zero
         int quarters = (int) (balance * 100) / 25;
@@ -14,10 +13,6 @@ public class CashBox {
         balance = 0.0;
         return (quarters + " quarters," + nickels + " nickels," + dimes + " dimes,");
     }
-
-
-
-
 
     public double getBalance() {
         return balance;

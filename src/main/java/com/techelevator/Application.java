@@ -36,9 +36,9 @@ public class Application {
 							if (ui.isValidItem(itemCode) && ui.isValidQuantity(itemCode,quantity)) {
 								ui.outPutString(inventory.dispenseItem(itemCode,quantity,cashBox));
 							} else if (!ui.isValidItem(itemCode)) {
-								ui.outPutString("Product code doesn't exist");
+								ui.outPutString("Product code doesn't exist \n");
 							} else if (ui.isValidItem(itemCode) && !ui.isValidQuantity(itemCode,quantity)){
-								ui.outPutString("Product is currently sold out, or there is not enough quantity left in the machine");
+								ui.outPutString("Product is currently sold out, or there is not enough quantity left in the machine\n");
 							}
 					} else if(purchaseInput == 3) {
 						ui.outPutString(cashBox.returnChange());
@@ -46,6 +46,8 @@ public class Application {
 						break;
 					}
 				}
+			} else if(userInput == 4) {
+				ui.outPutString(inventory.displaySalesReport());
 			}
 		}
 	}

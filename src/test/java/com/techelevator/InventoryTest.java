@@ -45,9 +45,8 @@ public class InventoryTest {
 
     @Test
     public void displaySalesReportTest() {
-
-        String displaySales = inventory.displaySalesReport();
-        assertEquals("Potato Crisps|0\n" +
+            String displaySales = inventory.displaySalesReport();
+            assertEquals("Potato Crisps|0\n" +
                 "Stackers|0\n" +
                 "Grain Waves|0\n" +
                 "Cloud Popcorn|0\n" +
@@ -65,15 +64,13 @@ public class InventoryTest {
                 "Triplemint|0\n" +
                 "\n" +
                 " ** TOTAL SALES ** $0.0", displaySales);
-
     }
 
 
     @Test
     public void dispenseItems() {
-
-        String dispense = inventory.dispenseItem("A1", 5, cashBox);
-        assertEquals("5 Potato Crisps Price: $3.05 Balance: $-5.0\n" +
+            String dispense = inventory.dispenseItem("A1", 5, cashBox);
+            assertEquals("5 Potato Crisps Price: $3.05 Balance: $-5.0\n" +
                 "Crunch Crunch, Yum!\n", dispense);
 
     }

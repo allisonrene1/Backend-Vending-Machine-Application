@@ -27,11 +27,4 @@ public class CashBoxTest {
         String change2 = cashBox.returnChange();
         assertEquals("29 quarters,2 dimes,0 nickels",change2);
     }
-
-
-    //TODO: returnChange test
-    //  - accepts any balance
-    //  - returns accurate change
-    //  - ends with correct string and balance
-
 }

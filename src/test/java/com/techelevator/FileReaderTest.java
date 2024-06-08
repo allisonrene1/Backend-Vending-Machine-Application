@@ -20,11 +20,4 @@ public class FileReaderTest {
         TreeMap itemList = fileReader.restockVendingMachine();
         assertNotNull(itemList);
     }
-
-
-    //TODO: FileReader test
-    //  - accepts any balance
-    //  - returns accurate change
-    //  - ends with correct string and balance
-
 }

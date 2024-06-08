@@ -1,5 +1,10 @@
 package com.techelevator;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -47,6 +52,13 @@ public class Inventory {
         inventoryMap.get(itemCode).setQuantity(inventoryMap.get(itemCode).getQuantity() - quantityToRemove);
         double newBalance = cashBox.getBalance() - Math.floor(inventoryMap.get(itemCode).getPrice() * quantityToRemove);
         cashBox.setBalance(newBalance);
+//        String filePath = "Log.txt";
+//        File logFile = new File(filePath);
+//        PrintWriter fileInput = new PrintWriter(logFile);
+//        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm:ss");
+//        LocalDateTime now = LocalDateTime.now();
+//        String formattedDate = dateTimeFormatter.format(now);
+//        fileInput.println(formattedDate + inventoryMap.get(itemCode).getName() + itemCode + Math.floor(inventoryMap.get(itemCode).getPrice() * quantityToRemove) + " $" + cashBox.getBalance());
         return (quantityToRemove + " " + inventoryMap.get(itemCode).getName() + " Price: $" + inventoryMap.get(itemCode).getPrice() + " Balance: $" + cashBox.getBalance() + "\n" + inventoryMap.get(itemCode).getEatingNoise() + "\n");
     }
 }

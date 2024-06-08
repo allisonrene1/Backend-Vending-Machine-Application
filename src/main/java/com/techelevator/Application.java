@@ -13,11 +13,10 @@ public class Application {
 		int purchaseInput = 0;
 
         UI ui = new UI();
-		FileReader fileReader = new FileReader();
+
 		Inventory inventory = new Inventory();
 		CashBox cashBox = new CashBox();
 
-		fileReader.restockVendingMachine();
 		cashBox.setBalance(0.0);
 
 		while(userInput != 3) {

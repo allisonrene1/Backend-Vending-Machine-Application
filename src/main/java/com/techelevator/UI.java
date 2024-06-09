@@ -1,5 +1,10 @@
 package com.techelevator;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class UI {
@@ -45,6 +50,13 @@ public class UI {
                 System.out.println("Invalid Input");
             } else {
                cashBox.setBalance(moneyToAdd + cashBox.getBalance());
+//                String filePath = "Log.txt";
+//                File logFile = new File(filePath);
+//                PrintWriter fileInput = new PrintWriter(logFile);
+//                DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm:ss");
+//                LocalDateTime now = LocalDateTime.now();
+//                String formattedDate = dateTimeFormatter.format(now);
+//                fileInput.println(formattedDate + "FEED MONEY: $" + moneyToAdd + " $" + cashBox.getBalance());
             }
         }
     }

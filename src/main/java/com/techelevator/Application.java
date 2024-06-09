@@ -29,14 +29,12 @@ public class Application {
 					purchaseInput = ui.showPurchaseMenu(cashBox.getBalance());
 					if(purchaseInput == 1) {
 						ui.feedMoney(cashBox);
-						//addlogging
 					} else if(purchaseInput == 2) {
 							ui.outPutString(inventory.displayItemsForCustomer());
 							String itemCode = ui.askUserProduct();
 							int quantity = ui.askUserQuantity();
 							if (ui.isValidItem(itemCode) && ui.isValidQuantity(itemCode,quantity)) {
 								ui.outPutString(inventory.dispenseItem(itemCode,quantity,cashBox));
-								//addlogging
 							} else if (!ui.isValidItem(itemCode)) {
 								ui.outPutString("Product code doesn't exist \n");
 							} else if (ui.isValidItem(itemCode) && !ui.isValidQuantity(itemCode,quantity)){

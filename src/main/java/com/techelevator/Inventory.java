@@ -9,9 +9,14 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class Inventory {
+
+    //creating a new file reader object
     FileReader fileReader = new FileReader();
+
+    //creating a new treemap
     private TreeMap <String,Item> inventoryMap;
 
+    //a constructor that assigns the treemap method from FileReader, to Inventory class's new treemap, called inventoryMap
     public Inventory() {
         this.inventoryMap = fileReader.restockVendingMachine();
     }
@@ -20,8 +25,11 @@ public class Inventory {
         return inventoryMap;
     }
 
+
     public String displayItemsForCustomer() {
-        //Displays inventory in rows with slot number, name, price, and quantity remaining
+        //a for-each loop to extract everything from the inventoryMap treemap, and assign it to a string called "item"
+        //where the vending machine items are displayed in a row, w/ item code first followed by name, price, and quantity remaining
+        //this is for the customer, AKA console user
         String items = "";
         for (Map.Entry<String,Item> entry : inventoryMap.entrySet()) {
            String item = (entry.getKey() + " " + entry.getValue().getName() + " $" + entry.getValue().getPrice() + " " + entry.getValue().getQuantity() + "\n");
@@ -33,7 +41,7 @@ public class Inventory {
 
 
     public String displaySalesReport() {
-        //Displays inventory in rows with slot number, name, price, and quantity remaining
+        //Displays inventory in rows with slot number, name, price, and quantity remaining for all of the vending machine sales
         String items = "";
         double totalSales = 0.0;
         for (Map.Entry<String,Item> entry : inventoryMap.entrySet()) {

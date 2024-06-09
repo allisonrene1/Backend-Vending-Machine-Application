@@ -9,6 +9,7 @@ public class Application {
 
 	public void run() {
 
+
 		int userInput = 0;
 		int purchaseInput = 0;
 

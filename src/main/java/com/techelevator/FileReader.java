@@ -6,7 +6,10 @@ import java.util.TreeMap;
 
 public class FileReader {
 
+
     public TreeMap restockVendingMachine() {
+
+        
         TreeMap <String,Item> loadingMap = new TreeMap<>();
         String filePath = "vendingmachine.csv";
         File vendingRestock = new File(filePath);
